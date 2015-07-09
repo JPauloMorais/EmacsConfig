@@ -69,7 +69,10 @@
   (save-some-buffers t))
 (add-hook 'focus-out-hook 'save-all)
 
-
+;;;;;;;;;;;;;;
+;;;;;;;Arquivos
+;;;;;;;;;;;;;;
+(global-set-key (kbd "M-f") 'find-file)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
