@@ -2,24 +2,34 @@
 
 ;Modes
 ;(add-to-list 'load-path "~/.emacs.d/android-mode")
-;(require 'android-mode)
 ;(custom-set-variables '(android-mode-sdk-dir "~/opt/android"))
 ;(add-to-list 'load-path "~/auto-complete")
 
 ;;;;;;;;;;;;;;
 ;;;;;;;;;Layout
 ;;;;;;;;;;;;;;
+(set-default 'truncate-lines nil)
+(delete-other-windows)
 (split-window-right)
 (global-set-key (kbd "M-w") 'other-window)
 (global-set-key (kbd "M-<f4>") 'save-buffers-kill-terminal)
-(load-theme 'bliss t)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (global-hl-line-mode 1)
-(set-face-background 'hl-line "gray13")
-(set-face-foreground 'hl-line "DodgerBlue1")
 (custom-set-variables
  '(initial-frame-alist (quote ((fullscreen . maximized)))))
+
+
+;;;;;;;;;;;;;;
+;;;;;;;;;Tema
+;;;;;;;;;;;;;;
+(set-face-background 'hl-line "#333333")
+(add-to-list 'default-frame-alist '(foreground-color . "#ffffff"))
+(add-to-list 'default-frame-alist '(background-color . "#0a0a0a"))
+(set-face-foreground 'font-lock-type-face "#0000ff")
+(set-face-foreground 'font-lock-variable-name-face "#63b8ff")
+(set-face-foreground 'font-lock-string-face "#7cfc00")
+(set-face-foreground 'font-lock-comment-face "#bebebe")
 
 ;;;;;;;;;;;;;;
 ;;;;;;;;;Edicao
@@ -73,12 +83,4 @@
 ;;;;;;;Arquivos
 ;;;;;;;;;;;;;;
 (global-set-key (kbd "M-f") 'find-file)
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("cd8820add96900e892d3e91bedb95b5deceefd98ee352d18ddad4ab4a98c96bf" default))))
+(setq make-backup-files nil)
